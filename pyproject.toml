@@ -1,0 +1,54 @@
+[project]
+name = "outreachforge"
+version = "0.1.0"
+description = "Production-ready AI-driven outreach campaign orchestration for email personalization and sales automation."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [ { name = "OutreachForge" } ]
+classifiers = [
+    "Framework :: AsyncIO",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Application Frameworks"
+]
+dependencies = [
+    "crewai==0.28.8",
+    "crewai_tools==0.1.6",
+    "langchain_community==0.0.29",
+    "fastapi>=0.100.0,<0.115.0",
+    "uvicorn[standard]>=0.22.0,<0.26.0",
+    "pydantic>=2.7.0,<3.0.0",
+    "python-dotenv>=1.0.0,<1.0.1",
+    "cryptography>=41.0.0,<42.0.0",
+    "celery>=5.5.0,<6.0.0",
+    "redis>=5.0.0,<6.0.0",
+    "sqlalchemy>=2.0.0,<2.1.0",
+    "psycopg2-binary>=2.9.0,<3.0.0",
+    "opentelemetry-api>=1.18.0,<2.0.0",
+    "opentelemetry-sdk>=1.18.0,<2.0.0",
+    "opentelemetry-exporter-otlp>=1.18.0,<2.0.0",
+    "opentelemetry-instrumentation-fastapi>=0.38.0,<1.0.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0,<9.0.0",
+    "pytest-cov>=4.0.0,<5.0.0",
+    "httpx>=0.25.0,<0.30.0",
+    "pytest-mock>=3.0.0,<4.0.0",
+    "mypy>=1.10.0,<2.0.0",
+    "ruff>=0.0.270,<0.0.400"
+]
+
+[build-system]
+requires = ["setuptools>=67.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+strict = false
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "W", "C", "Q", "B", "ANN"]
