@@ -4,11 +4,11 @@ OutreachForge is a production-ready multi-agent orchestration framework for outb
 
 ## Architecture
 
-```mermaid
 flowchart TB
     subgraph Legacy
         NOTEBOOK[\"Notebook Prototype\"]
     end
+
     subgraph Platform
         PACKAGE[\"OutreachForge Package\"]
         API[\"FastAPI Backend\"]
@@ -30,7 +30,6 @@ flowchart TB
     API --> OBS
     WORKER --> AGENTS
     DB --> LEADSTORE[\"CRM Deduplicated Lead Store\"]
-``` 
 
 ## Features
 
